@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+#box {
+	width: 380px;
+	margin: 30px auto;
+	font-family: 'Microsoft YaHei';
+	font-size: 14px;
+}
+
+
+#top{
+ 
+ margin:2px 0px 0px  10px;
+}
+
+
+h3 {
+ font-size:30px;
+ color:#FF6666;
+ line-height:3em ;
+  text-indent:12em;
+  font-family:"宋体";
+}
+
+
+#banner h4 {
+ font-size:30px;
+ color:#444444;
+ line-height:-3em ;
+  text-indent:1em;
+  font-family:"宋体";
+}
+
+
+#infor p {
+ font-size:30px;
+ color:black;
+  line-height:0.1px;
+  text-indent:7em;
+   margin-top:50px;
+  font-family:"宋体";
+}
+
+#yinsu p {
+ font-size:25px;
+ text-indent:0.5em;
+ line-height:2em;
+  color:black;
+   font-family:"楷体";
+}
+
+
+p {
+ font-size:30px;
+ text-indent:12em;
+ line-height:4em;
+  color:#FF6666;
+  font-family:"宋体";
+}
+#banner{
+ width:1100px;
+ margin:0 auto;
+ margin-top:0px;
+ padding:0px 0px 0px 0px;
+ border:1px dotted #666;
+
+}
+#leftContent {
+ position:absolute;
+ top:2px;
+ left:50px;
+ margin:100px auto;
+}
+
+
+
+#leftContent img{
+ height:100px;
+ width:100px;
+ border:1px solid #ccc;
+ border-radius:50%
+}
+#rightContent {
+ margin-left:120px;
+}
+
+#route{
+ width:700px;
+ margin:0 auto;
+ margin-top:10px;
+ padding-right:3px;
+ border:1px dotted #666;
+ position:relative;
+}
+
+
+#middle h2 {
+  font-size:30px;
+  color:#FF6666;
+  line-height:4em;
+  text-indent:0.5em;
+}
+
+#middle ul{
+	 line-height:2em;
+list-style-type:none;
+
+}
+
+#middle ul li{
+ line-height:4em;
+padding:3px;0px;3px;0px;
+border-bottom:1px dashed #eeeeee;
+font-size:18px;
+font-family:"宋体";
+color:#FF6666;
+}
+
+
+#leftContent img{
+ height:250px;
+ width:250px;
+ border:1px solid #ccc;
+ border-radius:50%
+}
+#rightContent {
+ margin-left:120px;
+}
+
+#route{
+ width:300px;
+ margin:0 auto;
+ margin-top:10px;
+ padding-right:3px;
+ border:1px dotted #666;
+ position:relative;
+}
+
+
+</style>
+</head>
+<body>
+<form id="form1" name="form1" method="post" th:object="${user}">
+	<div id="banner">
+<div id="top">  <h4>本期CP：</h4>
+  <div id="leftContent"><img src="../img/2.jpg"  width="250" height="250"/></div>
+    <div id="rightContent">
+      <h3 align="left">昵称： <span th:text="*{nickName}"></span></h3>
+      <p align="left" >微信： <span th:text="*{weixin}"></span></p>
+
+    </div>
+   <div id="infor">
+      <p>城市:<span th:text="*{weixin}"></span>   学校:<span th:text="*{school}"></span> </p>
+      <p>年龄:<span th:text="*{birthday}"></span>   星座：<th th:switch="${user.xingzuo}"><span th:case="'01'">水瓶座</span><span th:case="'02'">双鱼座</span><span th:case="'03'">白羊座</span><span th:case="'04'">金牛座</span><span th:case="'05'">双子座</span><span th:case="'06'">巨蟹座</span><span th:case="'07'">狮子座</span><span th:case="'08'">处女座</span><span th:case="'09'">天平座</span><span th:case="'10'">天蝎座</span><span th:case="'11'">射手座</span><span th:case="'12'">摩羯座</span></th> </p>
+
+	 
+	
+	 
+    </div>
+</div>
+  <div id="yinsu">
+      <p>您本期的CP{城市}、{职业}、{年龄}、{星座}符合您的要求，赶紧签到约起来吧！</p>
+	 
+    </div>
+</div>
+
+<div id="middle"> 
+   <h2 align="center"><span>CP任务</span></h2>
+   <ul>
+
+<li><span th:onclick="'javascript:openBox(\''+${user.userId}+'\')'" >第一天任务：（相见）</span></li>
+  <li> <a href="#" >当前任务</a></li>
+ 
+  <li> <a href="MyRenWu.html" >第一天任务：（相见）</a></li>
+   <li> <a href="MyRenWu.html" >第二天任务：（了解）</a></li>
+   <li> <a href="MyRenWu.html" >第三天任务：（真心话）</a></li>
+   <li> <a href="MyRenWu.html" >第四天任务：（爆照）</a></li>
+   <li> <a href="MyRenWu.html" >第五天任务：（惜别）</a></li>
+   </ul>
+   </div>
+</form>
+<script th:inline="javascript">
+$(function(){	
+})
+function openBox(id){
+	location.href="/user/MyRenWu?userId="+id;
+}
+
+</script>	
+</body>
+</html>

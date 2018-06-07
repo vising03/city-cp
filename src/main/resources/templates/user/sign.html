@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>报名页面</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<link href="../css/skin.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/media-adaption.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="index-wrap">
+    <div class="active-img"><img src="../img/banner.jpg"/></div>
+	<form id="user_save_form" name="user_save_form" method="post" th:object="${user}">
+		<input type="hidden" name="userId" th:value="*{userId}"/>
+		<div class="mail-edit-title">
+		    <label class="cp-lable-top">手机</label>
+		    <div class="medt-title-input"><input class="cp-font-style wth-200" type="text" name="telphone" placeholder="方便我们联系您" th:value="*{telphone}"/></div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">微信</label>
+	        <div class="medt-title-input"><input class="cp-font-style wth-200" type="text" name="weixin" placeholder="方便未来cp微信找您" th:value="*{weixin}"/></div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">昵称</label>
+	        <div class="medt-title-input"><input class="cp-font-style wth-200" type="text" name="nickName" th:value="*{nickName}"/></div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">性别</label>
+	        <div class="medt-title-input">
+	        	<select name="sex" class="cp-font-style">
+					<option th:selected="*{sex=='1'}" value ="1">男</option>
+					<option th:selected="*{sex=='2'}" value ="2">女</option>
+				</select>
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">所在城市</label>
+	        <div class="medt-title-input">
+	        	<!-- <div class="medt-right cp-font-style">市</div> -->
+	        	<div class="medt-right"><select name="city" class="cp-font-style">
+					<option value="6201">兰州市</option>
+					<option value="6202">嘉峪关市</option>
+					<option value="6203">金昌市</option>
+					<option value="6204">白银市</option>
+					<option value="6205">天水市</option>
+					<option value="6206">武威市</option>
+					<option value="6207">张掖市</option>
+					<option value="6208">平凉市</option>
+					<option value="6209">酒泉市</option>
+					<option value="6210">庆阳市</option>
+					<option value="6211">定西市</option>
+					<option value="6212">陇南市</option>
+					<option value="6229">临夏州</option>
+					<option value="6230">甘南州</option>
+				</select></div>
+	        	<!-- <div class="medt-right cp-font-style">省</div> -->
+	        	<div class="medt-right"><select name="province" class="cp-font-style">
+					<option value ="1">甘肃省</option>
+					<option value ="2">山西省</option>
+				</select></div>
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">生 日</label>
+	        <div class="medt-title-input"><input type="date" class="cp-font-style" name="birthday" th:value="*{birthday}"/></div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">星座</label>
+	        <div class="medt-title-input">
+	        	<select name="xingzuo" class="signal-select cp-font-style">
+					<option value ="01" th:selected="*{xingzuo=='01'}">水瓶座</option>
+					<option value ="02" th:selected="*{xingzuo=='02'}">双鱼座</option>
+					<option value ="03" th:selected="*{xingzuo=='03'}">白羊座</option>
+					<option value ="04" th:selected="*{xingzuo=='04'}">金牛座</option>
+					<option value ="05" th:selected="*{xingzuo=='05'}">双子座</option>
+					<option value ="06" th:selected="*{xingzuo=='06'}">巨蟹座</option>
+					<option value ="07" th:selected="*{xingzuo=='07'}">狮子座</option>
+					<option value ="08" th:selected="*{xingzuo=='08'}">处女座</option>
+					<option value ="09" th:selected="*{xingzuo=='09'}">天平座</option>
+					<option value ="10" th:selected="*{xingzuo=='10'}">天蝎座</option>
+					<option value ="11" th:selected="*{xingzuo=='11'}">射手座</option>
+					<option value ="12" th:selected="*{xingzuo=='12'}">摩羯座</option>
+				</select>
+			</div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">学校</label>
+	        <div class="medt-title-input"><input type="text" class="cp-font-style" name="school" th:value="*{school}"/></div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">学历</label>
+	        <div class="medt-title-input">
+	        	<select name="xueli" class="signal-select cp-font-style">
+					<option value ="1" th:selected="*{xueli=='1'}">大专</option>
+					<option value ="2" th:selected="*{xueli=='2'}">本科</option>
+					<option value ="3" th:selected="*{xueli=='3'}">硕士</option>
+					<option value ="4" th:selected="*{xueli=='4'}">博士</option>
+				</select>
+			</div>
+		</div>
+		<div class="mail-edit-title">
+	        <label class="cp-lable-top">职业</label>
+	        <div class="medt-title-input">
+	       		<select name="zhiye" class="signal-select cp-font-style">
+					<option value ="1" th:selected="*{zhiye=='1'}">在校大学生</option>
+					<option value ="2" th:selected="*{zhiye=='2'}">私企</option>
+					<option value ="3" th:selected="*{zhiye=='3'}">国企</option>
+					<option value ="4" th:selected="*{zhiye=='4'}">事业单位</option>
+					<option value ="5" th:selected="*{zhiye=='5'}">公务员</option>
+					<option value ="6" th:selected="*{zhiye=='6'}">外企</option>
+				</select>
+			</div>
+		</div>
+		<div class="mail-edit-title cp-title-detail">详细信息</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="czjl"/>
+	        <label class="cp-title-laber">我的成长经历:</label>
+	        <div id="czjl" class="cp-detail-con" contenteditable="true" th:utext="*{czjl}"></div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="qd"/>
+	        <label class="cp-title-laber">我对另一半的期待:</label>
+	        <div id="qd" class="cp-detail-con" contenteditable="true" th:utext="*{qd}"></div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="xhsw"/>
+	        <label class="cp-title-laber">我喜欢的食物:</label>
+	        <div id="xhsw" class="cp-detail-con" contenteditable="true" th:utext="*{xhsw}"></div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="lxjl"/>
+	        <label class="cp-title-laber">我的旅行经历:</label>
+	        <div id="lxjl" class="cp-detail-con" contenteditable="true" th:utext="*{lxjl}"></div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="zwbq"/>
+	        <label class="cp-title-laber">我的自我标签:</label>
+	        <div class="medt-title-input check-div" id="zwbq_div">
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="yyah"/>
+	        <label class="cp-title-laber">我的业余爱好:</label>
+	        <div id="yyah_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="xhcw"/>
+	        <label class="cp-title-laber">喜欢的宠物:</label>
+	        <div id="xhcw_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="dylx"/>
+	        <label class="cp-title-laber">我的电影类型:</label>
+	        <div id="dylx_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div class="mail-edit-title cp-title-detail">匹配要求</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="ppcp"/>
+	        <label class="cp-title-laber">希望我们从哪几个方面给您匹配CP:</label>
+	        <div id="ppcp_div" class="medt-title-input check-div">
+	       	</div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="dfzy"/>
+	        <label class="cp-title-laber">希望对方职业：（最多选3项）:</label>
+	        <div id="dfzy_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+	        <div class="medt-user-title height">
+	        	<div class="float-right"><input type="text" class="wth-40" name="dfnlx" th:value="*{dfnlx}"/></div><div class="float-right cp-font-style font-size-1">-最大:</div>
+	        	<div class="float-right"><input type="text" class="wth-40" name="dfnld" th:value="*{dfnld}"/></div><div class="float-right cp-font-style font-size-1">最小:</div>
+	        </div>
+	        <label class="cp-title-laber float-left">希望对方年龄：</label>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="dfxl"/>
+	        <label class="cp-title-laber">希望对方学历:</label>
+	        <div id="dfxl_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div class="mail-edit-title">
+			<input type="hidden" name="dfxz"/>
+	        <label class="cp-title-laber">希望对方星座：（最多选3项）:</label>
+	        <div id="dfxz_div" class="medt-title-input check-div">
+	        </div>
+		</div>
+		<div id="opersave" class="b-btn save">报名</div>
+	</form>
+</div>
+<script type="text/javascript" src="../plugin/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../js/CP.js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+$(function(){
+	zwbq([[${user.zwbq}]]);
+	yyah([[${user.yyah}]]);
+	xhcw([[${user.xhcw}]]);
+	dylx([[${user.dylx}]]);
+	ppcp([[${user.ppcp}]]);
+	dfzy([[${user.dfzy}]]);
+	dfxl([[${user.dfxl}]]);
+	dfxz([[${user.dfxz}]]);
+	$(".medt-title-span").on("click", function(){
+		if($(this).hasClass("active")){
+			$(this).removeClass("active");
+		}else{
+			$(this).addClass("active");
+		}
+	});
+	//保存
+	$("#opersave").on("click",function() {
+		initText();
+		initCheck();
+		//提交操作
+		$.ajax( {
+			url : "/user/save",
+			global : false,
+			type : "POST",
+			data : $('#user_save_form').serialize(),
+			async : false,
+			dataType : "json",
+			success : function(d) {
+				alert("保存成功");
+			}
+		});
+	})
+});
+function initCheck(){
+	$(".check-div").each(function(){
+		var id=this.id;
+		var value="";
+		$(this).find(".active").each(function(){
+			value += $(this).attr("tval")+",";
+		});
+		if(value){
+			value = value.substr(0,value.length-1);
+		}
+		var name = id.substr(0,id.length-4);
+		$("input[name='"+name+"']").val(value);
+	})
+}
+function initText(){
+	$(".cp-detail-con").each(function(){
+		var id=this.id;
+		$("input[name='"+id+"']").val($(this).html());
+	})
+}
+//自我标签
+function zwbq(str){
+	var html = "";
+	var a = zwbqStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(zwbqStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+zwbqStr[i].code+"'>"+zwbqStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+zwbqStr[i].code+"'>"+zwbqStr[i].name+"</div>";
+		}
+	}
+	$("#zwbq_div").html(html);
+}
+//业务爱好
+function yyah(str){
+	var html = "";
+	var a = yyahStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(yyahStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+yyahStr[i].code+"'>"+yyahStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+yyahStr[i].code+"'>"+yyahStr[i].name+"</div>";
+		}
+	}
+	$("#yyah_div").html(html);
+}
+//我喜欢的宠物
+function xhcw(str){
+	var html = "";
+	var a = xhcwStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(xhcwStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+xhcwStr[i].code+"'>"+xhcwStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+xhcwStr[i].code+"'>"+xhcwStr[i].name+"</div>";
+		}
+	}
+	$("#xhcw_div").html(html);
+}
+//我喜欢的电影类型
+function dylx(str){
+	var html = "";
+	var a = dylxStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(dylxStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+dylxStr[i].code+"'>"+dylxStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+dylxStr[i].code+"'>"+dylxStr[i].name+"</div>";
+		}
+	}
+	$("#dylx_div").html(html);
+}
+//匹配要求
+function ppcp(str){
+	var html = "";
+	var a = ppcpStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(ppcpStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+ppcpStr[i].code+"'>"+ppcpStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+ppcpStr[i].code+"'>"+ppcpStr[i].name+"</div>";
+		}
+	}
+	$("#ppcp_div").html(html);
+}
+//对方职业
+function dfzy(str){
+	var html = "";
+	var a = dfzyStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(dfzyStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+dfzyStr[i].code+"'>"+dfzyStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+dfzyStr[i].code+"'>"+dfzyStr[i].name+"</div>";
+		}
+	}
+	$("#dfzy_div").html(html);
+}
+//对方学历
+function dfxl(str){
+	var html = "";
+	var a = dfxlStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(dfxlStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+dfxlStr[i].code+"'>"+dfxlStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+dfxlStr[i].code+"'>"+dfxlStr[i].name+"</div>";
+		}
+	}
+	$("#dfxl_div").html(html);
+}
+//对方星座
+function dfxz(str){
+	var html = "";
+	var a = dfxzStr.length;
+	for(var i=0;i<a;i++){
+		var isCheck = "0";
+		if(str){
+			var arr=str.split(',');
+			for(var j=0;j<arr.length;j++){
+				if(dfxzStr[i].code==arr[j]){
+					isCheck="1";
+				}
+			}
+		}
+		if(isCheck=="1"){
+			html+="<div class='medt-title-span active' tval='"+dfxzStr[i].code+"'>"+dfxzStr[i].name+"</div>";
+		}else{
+			html+="<div class='medt-title-span' tval='"+dfxzStr[i].code+"'>"+dfxzStr[i].name+"</div>";
+		}
+	}
+	$("#dfxz_div").html(html);
+}
+/*]]>*/
+</script>
+</body>
+</html>

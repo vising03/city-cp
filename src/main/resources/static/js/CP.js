@@ -1,0 +1,8 @@
+zwbqStr=[{"name":"单身狗","code":"01"},{"name":"吃货","code":"02"},{"name":"死宅","code":"03"},{"name":"可爱","code":"04"},{"name":"成熟","code":"05"},{"name":"靠谱","code":"06"},{"name":"大厨","code":"07"},{"name":"幽默","code":"08"},{"name":"阳光","code":"09"},{"name":"潮男","code":"10"},{"name":"爱旅行","code":"11"},{"name":"低调","code":"12"},{"name":"瘦子","code":"13"},{"name":"胖子","code":"14"},{"name":"颜值控","code":"15"},{"name":"有洁癖","code":"16"},{"name":"萌萌哒","code":"17"}];
+yyahStr=[{"name":"看书","code":"01"},{"name":"旅行","code":"02"},{"name":"逛街","code":"03"},{"name":"宅","code":"04"},{"name":"追剧","code":"05"},{"name":"运动","code":"06"},{"name":"研究美食","code":"07"}];
+xhcwStr=[{"name":"猫","code":"01"},{"name":"狗","code":"02"},{"name":"其他","code":"03"}];
+dylxStr=[{"name":"喜剧","code":"01"},{"name":"恐怖","code":"02"},{"name":"爱情","code":"03"},{"name":"动作","code":"04"},	{"name":"科幻","code":"05"},{"name":"武侠","code":"06"},{"name":"战争","code":"07"},{"name":"惊悚","code":"08"}];
+ppcpStr=[{"name":"职业","code":"01"},{"name":"年龄","code":"02"},{"name":"爱好","code":"03"},{"name":"学历","code":"04"},	{"name":"星座","code":"05"}];
+dfzyStr=[{"name":"公务员","code":"01"},{"name":"事业单位","code":"02"},{"name":"国企","code":"03"},{"name":"外企","code":"04"},	{"name":"私企","code":"05"},{"name":"在校大学生","code":"05"}];
+dfxlStr=[{"name":"大专","code":"01"},{"name":"本科","code":"02"},{"name":"硕士","code":"03"},{"name":"博士","code":"04"}];
+dfxzStr=[{"name":"水平座","code":"01"},{"name":"双鱼座","code":"02"},{"name":"白羊座","code":"03"},{"name":"金牛座","code":"04"},{"name":"双子座","code":"05"},{"name":"巨蟹座","code":"06"},{"name":"狮子座","code":"07"},{"name":"处女座","code":"08"}	,{"name":"天平座","code":"09"},{"name":"天蝎座","code":"10"},{"name":"射手座","code":"11"},{"name":"摩羯座","code":"12"}];

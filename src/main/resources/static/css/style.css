@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+.cp-title-detail{text-align: center;font-family: 华文仿宋; background-color: #bdcad4;}
+.cp-title-laber{font-size: 1.4rem;font-family: 楷体;}
+.cp-detail-con{ font-size: 1.2rem; font-family: 楷体; margin-top: 5px; background-color: #f7f4f4;}
+.cp-lable-top{float: left; height: 2.5rem; line-height: 2.5rem; font-size: 1.3rem; font-family: 楷体;}
+.cp-font-style{font-family: 楷体;font-size: 1.2rem; }
+.medt-title-span{border: 1px solid gray;border-radius: 3px; text-align: center; padding: 0 5px; float: left; margin: 3px 6px 3px 0px; font-family: 楷体; cursor:hand}
+.medt-title-input .active{background-color: #ece0e0;}
+.float-right{float: right;}
+.float-left{float: left;}
+.wth-40{width: 40px; border: 1px solid;}
+.wth-200{width: 70%;}
+.font-size-1{font-size: 1rem;}
+.medt-user-title,.height{line-height: 25px;}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8"  />
+<style type="text/css">
+
+#banner{
+ width:1100px;
+ margin:0 auto;
+ margin-top:10px;
+ padding:0px 0px 5px 0px;
+ border:1px dotted #666;
+ position:relative;
+}
+
+#leftContent {
+ position:absolute;
+ top:20px;
+ left:50px;
+ margin:50px 40px;
+}
+
+
+
+#banner img{
+	margin:0px 0px 2px 20px;
+ height:100px;
+ width:100px;
+ border:1px solid #ccc;
+ border-radius:50%
+}
+
+#leftContent img{
+margin:0px 0px 2px 200px;
+ height:200px;
+ width:200px;
+ border:1px solid #ccc;
+ border-radius:50%
+}
+
+#rightContent img{
+ margin:0px 0px 10px 500px;
+ height:200px;
+ width:200px;
+ border:1px solid #ccc;
+ border-radius:50%
+}
+
+#banner h4 {
+ font-size:30px;
+ color:#444444;
+ line-height:0em ;
+  text-indent:0em;
+  font-family:"宋体";
+}
+
+#middle{
+ width:1100px;
+ margin:0 auto;
+ margin-top:0px;
+ padding-right:3px;
+ border:1px dotted #666;
+ position:relative;
+}
+
+#middle p {
+ font-size:30px;
+ text-indent:0.5em;
+ line-height:2em;
+  color:black;
+   font-family:"楷体";
+}
+
+
+#middle h3 {
+  font-size:30px;
+  color:#FF6666;
+  line-height:2em;
+  text-indent:0.5em;
+}
+
+#footer{
+ width:1100px;
+ margin:0 auto;
+ margin-top:0px;
+ padding-right:3px;
+ border:1px dotted #666;
+ position:relative;
+}
+
+
+#footer h3 {
+  font-size:14px;
+  color:#FF6666;
+  line-height:2em;
+  text-indent:0.5em;
+}
+
+</style>
+</head>
+<body>
+<div id="banner">
+  <h4>本期CP：</h4>
+  <div id="leftContent"><img src="../img/2.jpg" /></div>
+   <div id="rightContent"><img src="../img/1.jpg"/></div>
+ </div>
+  
+<div id="middle">
+
+
+  <div id="yinsu">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;又到了小君给各位美女帅哥布置任务的时候，非常高兴你们都能签到，祝大家有情人终成眷属：</p>
+	  <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天的任务主题是"初识"，各位美女帅哥请给你的CP介绍一下你心中的自己，可以有自己的成长经历，自己的爱好，自己的性格，自己喜欢的游戏等，祝各位合作愉快</h3>
+    </div>
+     
+</div>
+
+<div id="footer">
+
+
+  <div id="yinsu">
+	  <h3>做一个好看的图片上传并显示模块就可以了</h3>
+    </div>
+    <div id="yinsu1" style="margin: 10px 15px;">
+    <div id="addAttach" th:each="file : ${flist}"><img th:attr="src=|/user/getfile?id=*{file.id}|" style="width:80px;height:80px"/></div>
+    	<form id="index_form" enctype="multipart/form-data" method="post" action="/user/upload">
+    	<div>
+			    <div id="addAttach" href="#" ><img src="/img/1.jpg" style="width:80px;height:80px"/></div>
+			    <div id="files" style="height:0px">
+			    	<input id="file_upload" type="file" name="multipartFile" style="visibility: hidden;"/>
+			    </div>
+			</div>
+    </form>
+	</div>
+</div>
+<script type="text/javascript" src="../plugin/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../plugin/jquery/jquery-form.js"></script> 
+<script type="text/javascript" src="../js/CP.js"></script>
+<script th:inline="javascript">
+/*<![CDATA[*/
+$(function(){
+	$("#addAttach").on("click",function(){
+		$("#file_upload").click();
+	});
+	 $("#file_upload").on("change",function(){
+		 //提交操作
+		var options = {  
+	        url:'/user/upload',
+	        success:       showResponse,  //处理完成 
+	        resetForm: true,  
+	        dataType:  'json'  
+        };
+		$('#index_form').ajaxSubmit(options); 
+	}); 
+})
+function showResponse(responseText, statusText){
+	debugger;
+	alert(1);
+}
+/*]]>*/
+</script>
+</body>
+</html>

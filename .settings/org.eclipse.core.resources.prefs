@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/gsww/khj/controller/SysUserController.java=UTF-8
+encoding//src/main/java/com/gsww/khj/repository/SysUserRepository.java=UTF-8
+encoding//src/main/java/com/gsww/khj/service/SysUserService.java=UTF-8
+encoding//src/main/java/com/gsww/khj/service/impl/SysUserServiceImpl.java=UTF-8
+encoding//src/main/resources/application.properties=UTF-8

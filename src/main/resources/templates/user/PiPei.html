@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+#box {
+	width: 380px;
+	margin: 30px auto;
+	font-family: 'Microsoft YaHei';
+	font-size: 14px;
+}
+
+input {
+	width: 260px;
+	border: 1px solid #e2e2e2;
+	height: 30px;
+	float: left;
+	background-repeat: no-repeat;
+	background-size: 25px;
+	background-position: 5px center;
+	padding: 0 0 0 40px;
+}
+
+#search {
+	width: 78px;
+	height: 32px;
+	float: right;
+	background: black;
+	color: white;
+	text-align: center;
+	line-height: 32px;
+	cursor: pointer;
+}
+
+#footer {
+	left: 50px;
+	padding: 10px 50px;
+}
+
+#footer h2 {
+	font-size: 18px;
+	line-height: 4em;
+	text-indent: 0.5em;
+	font-family: "宋体";
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th, td {
+	width: 100px;
+	height: 40px;
+	border: 1px solid black;
+	font-size: 14px;
+	text-align: center;
+	font-family: "楷体";
+	color:Navy;
+}
+</style>
+</head>
+<body>
+	<form id="form1" name="form1" method="post" action="">
+		<div id="box">
+			<input type="text" name="search" placeholder="请输入关键字" />
+			<div id="search">搜索</div>
+		</div>
+
+		<div id="footer">
+
+			<table>
+
+				<tr>
+					<th>序号</th>
+					<th>昵称</th>
+					<th>性别</th>
+					<th>年龄</th>
+					<th>学历</th>
+					<th>学校</th>
+					<th>城市</th>
+					<th>职业</th>
+					<th>星座</th>
+					<th>操作</th>
+				</tr>
+				<tr th:each="user,userStat : ${PiPei}">
+					<th th:text="${userStat.count}"></th>
+					<th th:onclick="'javascript:openBox(\''+${user.userId}+'\')'" th:text="${user.nickName}"></th>
+					<th th:switch="${user.sex}"><span th:case="'1'">男</span><span th:case="'2'">女</span></th>
+					<th th:text="${user.birthday}"></th>
+					<th th:switch="${user.xueli}"><span th:case="'1'">大专</span><span th:case="'2'">本科</span><span th:case="'3'">硕士</span><span th:case="'4'">博士</span></th>
+					<th th:text="${user.school}"></th>
+					<th th:text="${user.province}"></th>
+					<th th:switch="${user.zhiye}"><span th:case="'1'">在校大学生</span><span th:case="'2'">私企</span><span th:case="'3'">国企</span><span th:case="'4'">事业单位</span><span th:case="'5'">公务员</span><span th:case="'6'">外企</span></th>
+					<th th:text="${user.xingzuo}"><span th:case="'01'">水平座</span><span th:case="'02'">白羊座</span><span th:case="'03'">白羊座</span><span th:case="'04'">金牛座</span><span th:case="'05'">双子座</span><span th:case="'06'">巨蟹座</span> <span th:case="'07'">狮子座座</span><span th:case="'08'">处女座</span><span th:case="'09'">天平 座</span><span th:case="'10'">天蝎座</span><span th:case="'11'">射手座</span><span th:case="'12'">摩羯座</span></th>
+					<th ><span th:onclick="'javascript:PiPeiUser(\''+${user.userId}+'\')'" >匹配</span></th>
+				</tr>
+			</table>
+		</div>
+	</form>
+<script type="text/javascript" src="../plugin/jquery/jquery.min.js"></script>
+<script th:inline="javascript">
+$(function(){	
+})
+function openBox(id){
+	location.href="/user/sign?userId="+id;
+}
+
+
+function PiPeiUser(id){
+	$.ajax({
+		url : "/user/PiPeiUser",
+		global : false,
+		type : "GET",
+		data : {'userId':id},
+		async : false,
+		dataType : "json",
+		success : function(r) {
+			debugger
+			if(r.isSusccess){
+				location.href= "/user/PiPei";
+			}else{
+				alert("匹配失败！");
+			}
+		}
+	});
+}  
+
+
+</script>	
+</body>
+</html>
